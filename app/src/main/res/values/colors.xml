@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary_old">#3F51B5</color>
+    <color name="colorPrimaryDark_old">#303F9F</color>
+    <color name="colorPrimary">#2EC4B6</color>
+    <color name="colorPrimaryDark">#2EC4B6</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- ToolBar自定义溢出菜单文字 -->
+    <color name="overflowTextColor">#9e9e9e</color>
+
+</resources>

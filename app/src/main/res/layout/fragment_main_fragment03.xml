@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:stv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fragment_main_fragment03_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="我的"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <!-- background_view为你上拉下拉的自定义的背景布局,不设置的话上拉下拉时显示的则是你的布局背景View -->
+    <lib.homhomlib.design.SlidingLayout
+        android:id="@+id/slidingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:sliding_mode="bottom"> <!-- both及top模式目前有bug,下半屏点击会导致果冻效果起效 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/share_divider"
+            android:showDividers="beginning|middle|end"
+            android:background="#F4F4F4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/ntb_item_list_fmf03_head_portrait"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/head_64px"
+                    app:civ_border_color="#5D5D5D00"
+                    app:civ_border_width="1dp" />
+
+                <com.allen.library.SuperTextView
+                    android:id="@+id/ntb_item_list_fmf03_super_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    stv:sBackgroundColor="#FFFFFF"
+                    stv:sLeftTextColor="#5D5D5D"
+                    stv:sLeftTextSize="18sp"
+                    stv:sLeftTextString="红尘君"
+                    stv:sLineShow="none"
+                    stv:sRightIconRes="@mipmap/icon_right" />
+            </LinearLayout>
+
+            <!-- 它能比View更轻量级的实现Item的间距,可以有weight属性,但不可设置background -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sBackgroundColor="#FFFFFF"
+                stv:sLeftIconRes="@mipmap/icon_vip"
+                stv:sLeftTextColor="#5D5D5D"
+                stv:sLeftTextSize="18sp"
+                stv:sLeftTextString="我的VIP"
+                stv:sLineShow="none"
+                stv:sRightIconRes="@mipmap/icon_right"
+                stv:sUseRipple="true" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sBackgroundColor="#FFFFFF"
+                stv:sLeftIconRes="@mipmap/icon_account"
+                stv:sLeftTextColor="#5D5D5D"
+                stv:sLeftTextSize="18sp"
+                stv:sLeftTextString="我的账户"
+                stv:sLineShow="none"
+                stv:sRightIconRes="@mipmap/icon_right"
+                stv:sUseRipple="true" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sBackgroundColor="#FFFFFF"
+                stv:sLeftIconRes="@mipmap/icon_mall"
+                stv:sLeftTextColor="#5D5D5D"
+                stv:sLeftTextSize="18sp"
+                stv:sLeftTextString="趣趣商城"
+                stv:sLineShow="none"
+                stv:sRightIconRes="@mipmap/icon_right"
+                stv:sUseRipple="true" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sBackgroundColor="#FFFFFF"
+                stv:sLeftIconRes="@mipmap/icon_task"
+                stv:sLeftTextColor="#5D5D5D"
+                stv:sLeftTextSize="18sp"
+                stv:sLeftTextString="我的任务"
+                stv:sLineShow="none"
+                stv:sRightIconRes="@mipmap/icon_right"
+                stv:sUseRipple="true" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sBackgroundColor="#FFFFFF"
+                stv:sLeftIconRes="@mipmap/icon_topic"
+                stv:sLeftTextColor="#5D5D5D"
+                stv:sLeftTextSize="18sp"
+                stv:sLeftTextString="我的话题"
+                stv:sLineShow="none"
+                stv:sRightIconRes="@mipmap/icon_right"
+                stv:sUseRipple="true" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                stv:sBackgroundColor="#FFFFFF"
+                stv:sCenterTextSize="18sp"
+                stv:sCenterTextString="退出登录"
+                stv:sLineShow="none"
+                stv:sUseRipple="true" />
+        </LinearLayout>
+    </lib.homhomlib.design.SlidingLayout>
+</LinearLayout>

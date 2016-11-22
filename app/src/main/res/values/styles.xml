@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- *************************ToolBar*********************************** -->
+    <style name="AppTheme.ToolBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 状态栏颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- toolbar颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 标题颜色-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!-- 溢出菜单图标颜色-->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- 溢出菜单文字颜色-->
+        <item name="textAppearanceLargePopupMenu">@style/OverflowMenuTextAppearance</item>
+        <!--EditText 输入框中字体的颜色-->
+        <!--<item name="editTextColor">@android:color/white</item>-->
+        <!--EditText 输入框中提示字体的颜色-->
+        <item name="android:textColorHint">@color/abc_background_cache_hint_selector_material_dark</item>
+        <!-- 菜单项点击selector-->
+        <item name="actionBarItemBackground">@drawable/abc_item_background_holo_dark</item>
+        <!-- toolbar菜单弹出样式 -->
+        <!-- 默认样式的父类为Widget.AppCompat.Light.PopupMenu.Overflow 但会挡住标题栏 自定义的话必须继承这个父类的样式-->
+        <item name="actionOverflowMenuStyle">@style/MenuStyle</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <!-- 自定义溢出菜单文字样式-->
+    <style name="OverflowMenuTextAppearance" parent="@style/TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/overflowTextColor</item>
+    </style>
+
+    <!-- 自定义toolbar菜单弹出样式 -->
+    <style name="MenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <!--弹出菜单背景色,此处个人设置成跟标题栏的背景色一致-->
+        <!--<item name="android:popupBackground">?attr/colorPrimary</item>-->
+        <!-- 弹出菜单与标题栏的垂直间距-->
+        <item name="android:dropDownVerticalOffset">0dip</item>
+    </style>
+
+</resources>

@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.xiaoququ"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // ndk生成的.so文件，通常我们不是放到jni目录中的,需要进行以下设置
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            /*
+            * 采用下面这种方法也是一样的
+            * jniLibs {
+            *  srcDir 'libs'
+            * }
+            *
+            * 这样也可以
+            * sourceSets.main {
+            *    jniLibs.srcDir 'libs' // <-- Set your folder here!
+            * }
+            */
+            res.srcDirs = ['src/main/res', 'src/main/res/anim']
+        }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+    }
+}
+
+// 统一定义版本号
+ext {
+    ButterKnifeVersion = "8.4.0"
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    // 编译ButterKnife注解框架【但不知为何只有加在app's build.gradle才有效,而加在library's build.gradle却无效】
+    compile "com.jakewharton:butterknife:${ButterKnifeVersion}"
+    apt "com.jakewharton:butterknife-compiler:${ButterKnifeVersion}"
+
+    compile project(':library')
+}

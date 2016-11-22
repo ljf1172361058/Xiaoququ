@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/activity_main"
+    >
+
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ntb_vp_horizontal_ntb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+    <!-- NavigationTabBar各属性详解
+        全局:
+        app:ntb_bg_color="#000"             ntb的背景颜色                 可自定义 PS;默认为紫色
+        app:ntb_active_color="#000"         ntb活动时的图标+标题颜色      可自定义 PS;默认为白色
+        app:ntb_inactive_color="#0f0"       ntb不活动时的图标+标题颜色    可自定义 PS;默认为紫色
+        app:ntb_corners_radius="10dp"       ntb切换时的动画弧度大小       可自定义
+        app:ntb_animation_duration="1000"   ntb切换时的动画时间           单位:ms
+        图标相关:
+        app:ntb_icon_size_fraction="1"      图标所占的大小比例            最佳值:0.5
+        标题相关:
+        app:ntb_titled="true"               是否显示图标所对应的标题      默认为false
+        app:ntb_title_mode="active"         图片所对应的标题显示模式      active:活动时才显示 all:总是显示  PS:app:ntb_titled属性值为 true 时才可用
+        app:ntb_title_size="10sp"           设置图标所对应的标题文字大小  请自定义
+        勋章相关:
+        app:ntb_badged="false"              是否显示勋章                  默认为false
+        app:ntb_badge_gravity="top"         勋章的上下位置                top|bottom
+        app:ntb_badge_position="right"      勋章的左右位置                left(25%), center(50%) and right(75%)
+        app:ntb_badge_bg_color="#ffff0000"  勋章的背景颜色                可自定义
+        app:ntb_badge_title_color="#000000" 勋章的标题文字颜色            可自定义 PS:不设置的话默认为切换动画的背景色
+        app:ntb_badge_size="12sp"           勋章的标题文字大小            可自定义
+        字体相关:
+        app:ntb_badge_use_typeface="false"  是否使用自定义字体            默认为false
+        app:ntb_typeface="fonts/by3500.ttf" 设置ntb的自定义字体           请将自定义的字体文件放在 asset/fonts 文件夹下
+        其他:
+        app:ntb_preview_colors="@array/colors"
+        app:ntb_scaled="true"
+        app:ntb_tinted="true"
+        app:ntb_swiped="true"  -->
+    <com.gigamole.navigationtabbar.ntb.NavigationTabBar
+        android:id="@+id/ntb_horizontal"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:ntb_titled="true"
+        app:ntb_badged="false"
+        app:ntb_badge_size="12sp"
+        app:ntb_bg_color="#ffffff"
+        app:ntb_badge_bg_color="#ff0000"
+        app:ntb_badge_gravity="top"
+        app:ntb_badge_position="right"
+        app:ntb_title_mode="all"
+        />
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/main_activity_ntb_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="56dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:boom_inActionBar="false"
+        />
+
+</android.support.design.widget.CoordinatorLayout>
+</FrameLayout>
+<!--<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ntb_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#423752"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+     <android.support.design.widget.AppBarLayout
+         android:layout_width="match_parent"
+         android:layout_height="180dp"
+         android:fitsSystemWindows="true"
+         android:theme="@style/AppTheme">
+
+         <android.support.design.widget.CollapsingToolbarLayout
+             android:id="@+id/ntb_toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:fitsSystemWindows="true"
+             app:title="@string/app_name"
+             app:expandedTitleTextAppearance="@null"
+             app:contentScrim="#605271"
+             app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+             <ImageView
+                 android:id="@+id/ntb_backdrop"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:fitsSystemWindows="true"
+                 android:background="#605271"
+                 android:src="@mipmap/ic_eighth"
+                 android:tint="#9f90af"
+                 android:padding="32dp"
+                 app:layout_collapseMode="pin"/>
+
+             <android.support.v7.widget.Toolbar
+                 android:layout_width="match_parent"
+                 android:layout_height="?attr/actionBarSize"
+                 android:fitsSystemWindows="true"
+                 app:layout_collapseMode="parallax"
+                 app:title="@string/app_name"
+                 app:popupTheme="@style/AppTheme"/>
+
+         </android.support.design.widget.CollapsingToolbarLayout>
+     </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ntb_vp_horizontal_ntb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+      NavigationTabBar各属性详解
+        全局:
+        app:ntb_bg_color="#000"             ntb的背景颜色                 可自定义
+        app:ntb_active_color="#000"         ntb活动时的图标+标题颜色      可自定义
+        app:ntb_inactive_color="#0f0"       ntb不活动时的图标+标题颜色    可自定义
+        app:ntb_corners_radius="10dp"       ntb切换时的动画弧度大小       可自定义
+        app:ntb_animation_duration="1000"   ntb切换时的动画时间           单位:ms
+        图标相关:
+        app:ntb_icon_size_fraction="1"      图标所占的大小比例            最佳值:0.5
+        标题相关:
+        app:ntb_titled="true"               是否显示图标所对应的标题      默认为false
+        app:ntb_title_mode="active"         图片所对应的标题显示模式      active:活动时才显示 all:总是显示  PS:app:ntb_titled属性值为 true 时才可用
+        app:ntb_title_size="10sp"           设置图标所对应的标题文字大小  请自定义
+        勋章相关:
+        app:ntb_badged="false"              是否显示勋章                  默认为false
+        app:ntb_badge_gravity="top"         勋章的上下位置                top|bottom
+        app:ntb_badge_position="right"      勋章的左右位置                left(25%), center(50%) and right(75%)
+        app:ntb_badge_bg_color="#ffff0000"  勋章的背景颜色                可自定义
+        app:ntb_badge_title_color="#000000" 勋章的标题文字颜色            可自定义 PS:不设置的话默认为切换动画的背景色
+        app:ntb_badge_size="12sp"           勋章的标题文字大小            可自定义
+        字体相关:
+        app:ntb_badge_use_typeface="false"  是否使用自定义字体            默认为false
+        app:ntb_typeface="fonts/by3500.ttf" 设置ntb的自定义字体           请将自定义的字体文件放在 asset/fonts 文件夹下
+        其他:
+        app:ntb_preview_colors="@array/colors"
+        app:ntb_scaled="true"
+        app:ntb_tinted="true"
+        app:ntb_swiped="true"  >
+
+    <com.gigamole.navigationtabbar.ntb.NavigationTabBar
+        android:id="@+id/ntb_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        app:ntb_titled="true"
+        app:ntb_badged="false"
+        app:ntb_badge_size="12sp"
+        app:ntb_badge_bg_color="#ffffffff"
+        app:ntb_badge_gravity="top"
+        app:ntb_badge_position="right"
+        app:ntb_title_mode="all"
+        />
+
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/main_activity_ntb_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="56dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:boom_inActionBar="false"
+        app:boom_button_color="#605271"
+        app:boom_button_pressed_color="#9f90af"
+        />
+</android.support.design.widget.CoordinatorLayout>-->
+
